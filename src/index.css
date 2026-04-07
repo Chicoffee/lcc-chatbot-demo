@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:opsz,wght@14..32,100..900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(#F4F0FF, #DACDFF);
+}
+
+#chatbot-toggler {
+  position: fixed;
+  bottom: 30px;
+  right: 35px;
+  border: none;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  background: #4211e4;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+#chatbot-toggler span {
+  cursor: pointer;
+  position: absolute;
+  color: #FFF;
+}
+
+.container.show-chatbot #chatbot-toggler {
+  transform: rotate(90deg);
+}
+
+#chatbot-toggler span:last-child,
+.container.show-chatbot #chatbot-toggler span:first-child {
+  opacity: 0;
+}
+
+.container.show-chatbot #chatbot-toggler span:last-child {
+  opacity: 1;
+}
+
+.chatbot-popup {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  bottom: 90px;
+  right: 35px;
+  width: 420px;
+  overflow: hidden;
+  background: #FFF;
+  border-radius: 15px;
+  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
+  transform: scale(0.2);
+  transform-origin: bottom right;
+  transition: all 0.1s ease;
+  z-index: 100;
+}
+
+.container.show-chatbot .chatbot-popup {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.chatbot-popup .chatbot-header {
+  display: flex;
+  padding: 15px 22px;
+  align-items: center;
+  justify-content: space-between;
+  background: #4211e4;
+}
+
+.chatbot-header .header-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.header-info svg {
+  height: 35px;
+  width: 35px;
+  padding: 6px;
+  flex-shrink: 0;
+  fill: #4211e4;
+  background: #FFF;
+  border-radius: 50%;
+}
+
+.header-info .logo-text {
+  color: #FFF;
+  font-size: 1.31rem;
+  font-weight: 600;
+}
+
+.chatbot-header button {
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 1.9rem;
+  padding-top: 2px;
+  border-radius: 50%;
+  margin-right: -10px;
+  background: none;
+  transition: 0.2s ease;
+}
+
+.chatbot-header button:hover {
+  background-color: #1b0c8a;
+}
+
+.chatbot-body {
+  flex-direction: column;
+  display: flex;
+  gap: 20px;
+  height : 460px;
+  margin-bottom: 82px;
+  overflow-y: auto;
+  padding:  25px 22px;
+  scrollbar-width: thin;
+  scrollbar-color: #DDD3F9 transparent;
+}
+
+.chatbot-body .message {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+}
+
+.chatbot-body .message.error .message-text {
+  color: #FF0000;
+}
+
+.chatbot-body .bot-message svg {
+  height: 35px;
+  width: 35px;
+  padding: 6px;
+  flex-shrink: 0;
+  align-self: flex-end;
+  margin-bottom: 2px;
+  fill: #FFF;
+  background: #4211e4;
+  border-radius: 50%;
+}
+.chatbot-body .message .message-text {
+  padding: 12px 16px;
+  max-width: 75%;
+  word-wrap: break-word;
+  white-space: pre-line;
+  font-size: 0.95rem;
+}
+
+.chatbot-body .bot-message .message-text {
+  background: #a09fa276;
+  border-radius: 13px 13px 13px 3px;
+}
+
+.chatbot-body .user-message {
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.chatbot-body .user-message .message-text {
+  color: #FFF;
+  background: #4211e4;
+  border-radius: 13px 13px 3px 13px;
+}
+
+.chatbot-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #FFF;
+  padding: 15px 22px 20px;
+}
+
+.chatbot-footer .chat-form {
+  display: flex;
+  align-items: center; 
+  background: #FFF;
+  border-radius: 32px;
+  outline: 1px solid #CCCCE5;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.06);
+}
+
+.chatbot-footer .chat-form:focus-within {
+  outline: 2px solid #1b0c8a;
+}
+
+.chat-form .message-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: none;
+  height: 47px;
+  padding: 0 17px;
+  font-size: 0.95rem;
+}
+
+.chat-form button {
+  height: 35px;
+  width: 35px;
+  border: none;
+  outline: none;
+  display: none;
+  cursor: pointer;
+  font-size: 1.15rem;
+  color: #FFF;
+  flex-shrink: 0;
+  border-radius: 50%;
+  margin-right: 6px;
+  background: #4211e4;
+  transition: 0.2s ease;
+}
+
+.chat-form button:hover {
+  background: #1b0c8a;
+}
+
+.chat-form .message-input:valid ~ button {
+  display: block;
+}
+
+/*Enrollment Page*/
+.enrollment-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: url('./components/assets/lcc.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;            
+  overflow: hidden;
+}
+
+.enrollment-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.75); 
+  z-index: -1;
+}
+
+.enrollmemt-header-title {
+     position: absolute;
+    top: 50px;
+    left: 100px;
+    font-size: 40px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    color: black;
+    z-index: 2;
+}
+
+.enrollment-container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 50px;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+    z-index: 1;
+}
+
+.enrollmemt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.lcc-logo img {
+    width: 400px;
+    position: fixed;
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav {
+    position: absolute;
+    right: 150px;
+    top: 50px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #FFEB3B;
+    text-decoration: underline;
+}
+
+.enrollment-body {
+    text-align: left;
+    margin-top: 100px;
+    position: absolute;
+    right: 150px;
+    width: 40%;
+    z-index: 1;
+    color: black;
+}
+
+.enrollment-body h2 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#enroll-btn {
+    background-color: blue;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 25px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#enroll-btn:hover{
+    background: #2a2c7a
+}
+
+
+
+/*Responsive Media Query Mobile*/
+@media (max-width: 520px) {
+  #chatbot-toggler {
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .chatbot-popup {
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .chatbot-popup .chatbot-header {
+    padding: 12px 15px;
+  }
+
+  .chatbot-body {
+    height: calc(90% - 55px);
+    padding: 25px 15px;
+  }
+
+  .chatbot-footer {
+    padding: 10px 15px 15px;
+  }
+
+}
