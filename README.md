@@ -5,9 +5,8 @@ Please meet LISA, LCC's Intelligent Student Assistant, that will help you with y
 ## 🌐 Live Demo
 
 🚀 Try the chatbot here:
-👉 https://[your-project-name.netlify.app
-](https://lcc-chatbot-demo.netlify.app/)
-📌 Deployed using Netlify
+👉 https://https://lcc-chatbot-demo.netlify.app
+</br>📌 Deployed using Netlify
 
 ## 🚀 Features
 💬 Real-time messaging interface
