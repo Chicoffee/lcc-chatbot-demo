@@ -7,12 +7,12 @@ Please meet LISA, LCC's Intelligent Student Assistant, that will help you with y
 🚀 Try the chatbot here:
 
 ## 🚀 Features
-💬 Real-time messaging interface
-🧠 AI-powered responses
-🎨 Clean and responsive UI
-⚡ Fast and lightweight performance
+💬 Real-time messaging interface </br>
+🧠 AI-powered responses</br>
+🎨 Clean and responsive UI</br>
+⚡ Fast and lightweight performance</br>
 
 
 <h2 align="center">🛠️ Tech Stack</h2>
-Front-end: HTM, CSS, JAVASCRIPT, REACT
+Front-end: HTM, CSS, JAVASCRIPT, REACT </br>
 API: Gemini API
