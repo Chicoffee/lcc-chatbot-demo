@@ -11,12 +11,12 @@
 body {
   width: 100%;
   height: 100vh;
-  background-image: 
-    linear-gradient(rgba(75, 73, 73, 0.45), rgba(0, 0, 0, 0.55)), /*Shadow background*/
+  /*background-image: 
+    linear-gradient(rgba(75, 73, 73, 0.45), rgba(0, 0, 0, 0.55)),
     url('./components/assets/lcc.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;   
+  background-attachment: fixed;   */
 }
 
 #chatbot-toggler {
@@ -243,7 +243,7 @@ body {
 }
 
 .header-container {
-  background: #4211E4;
+  background: #5585b5;
   padding: 12px 5%;
   display: flex;
   align-items: center;
@@ -333,12 +333,12 @@ body {
 .whyEnroll {
   flex: 1;
   min-width: 320px;
-  color: white;
+  color: black;
   padding-top: 20px;
 }
 
 .whyEnroll h3, .whyEnroll h2 {
-  color: white;
+  color: black;
 }
 
 .whyEnroll h3 {
@@ -479,12 +479,6 @@ body {
   }
 
   /*Enrollment Page Mobile*/
-  .backgroundContainer {
-    background-image:
-    linear-gradient(rgba(75, 73, 73, 0.45), rgba(0, 0, 0, 0.55)),
-    url('./components/assets/lcc_portrait.jpg');
-  }
-  
   .body-container {
     flex-direction: column;
     align-items: center;
