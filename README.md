@@ -1,16 +1,18 @@
-# React + Vite
+<h1 algin="center">🤖 LISA</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Please meet LISA, LCC's Intelligent Student Assistant, that will help you with your concerns and has full cover of the college department's handbook!
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
+🚀 Try the chatbot here: https://lcc-chatbot-demo.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
+💬 Real-time messaging interface </br>
+🖥️ Dummy Enrollment Page UI </br>
+🧠 AI-powered responses</br>
+🎨 Clean and responsive UI</br>
+⚡ Fast and lightweight performance</br>
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<h2>🛠️ Tech Stack</h2>
+⚙️Front-end: HTM, CSS, JAVASCRIPT, REACT </br>
+⚙️API: Gemini API
