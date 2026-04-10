@@ -34,7 +34,7 @@ const App = () => {
     };
 
     try {
-      const response = await fetch(import.meta.env.VITE_API_URL, requestOptions);
+      const response = await fetch(import.meta.env.VITE_GEMINI_API, requestOptions);
       const data = await response.json();
       if(!response.ok) throw new Error(data.error.message || "Something went wrong!");
 
@@ -52,6 +52,8 @@ const App = () => {
 
   return(
     <div className={`container ${showChatbot ? "show-chatbot" : ""}`} style={{ position: 'relative', minHeight: '100vh' }}>
+
+      <EnrollmentPage/>
 
       <button onClick={() => setShowChatbot(prev => !prev)} id="chatbot-toggler">
         <span className="material-symbols-rounded">mode_comment</span>
@@ -73,7 +75,7 @@ const App = () => {
             <div className="message bot-message">
               <ChatBotIcon/>
                 <p className="message-text">
-                  You are LISA, LCC's Inteligent Student Asssitant, a friendly, warm, and helpful AI assistant for La Concepcion College (LCC) students.
+                  Im LISA, LCC's Inteligent Student Asssitant, a friendly, warm, and helpful AI assistant for La Concepcion College (LCC) students.
                 </p>
               </div>
             {/*Chat Render*/}

@@ -11,7 +11,12 @@
 body {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(#F4F0FF, #DACDFF);
+  background-image: 
+    linear-gradient(rgba(75, 73, 73, 0.45), rgba(0, 0, 0, 0.55)), /*Shadow background*/
+    url('./components/assets/lcc.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;   
 }
 
 #chatbot-toggler {
@@ -232,139 +237,218 @@ body {
 }
 
 /*Enrollment Page*/
-.enrollment-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: url('./components/assets/lcc.jpg') no-repeat center center fixed;
-  background-size: cover;
-  background-position: center;
-  z-index: -1;            
-  overflow: hidden;
+.backgroundContainer {
+  margin: 0;
+  padding: 0;
 }
 
-.enrollment-background::before {
-  content: '';
+.header-container {
+  background: #4211E4;
+  padding: 12px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-container img {
+  height: 65px;
+  width: auto;
+}
+
+.page-title {
+  color: white;
+  font-size: 1.55rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburger span {
+  display: block;
+  width: 30px;
+  height: 3.5px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+
+.navbar li {
+  color: white;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.navbar li:hover {
+  color: #FFD700;
+}
+
+.body-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 5%;
+  gap: 40px;
+  align-items: flex-start;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.body-container img {
+  width: 380px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.whyEnroll {
+  flex: 1;
+  min-width: 320px;
+  color: white;
+  padding-top: 20px;
+}
+
+.whyEnroll h3, .whyEnroll h2 {
+  color: white;
+}
+
+.whyEnroll h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.whyEnroll ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 35px;
+}
+
+.whyEnroll li {
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+  padding-left: 5px;
+  position: relative;
+}
+
+.whyEnroll li::before {
+  content: "•";
+  color: white;
+  font-size: 1.8rem;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.75); 
-  z-index: -1;
+  left: -10px;
+  top: -6px;
 }
 
-.enrollmemt-header-title {
-     position: absolute;
-    top: 50px;
-    left: 100px;
-    font-size: 40px;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: bold;
-    color: black;
-    z-index: 2;
+.whyEnroll h2 {
+  font-size: 2.1rem;
+  margin: 25px 0 12px 0;
 }
 
-.enrollment-container {
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 50px;
-    background: transparent;
-    border-radius: 0;
-    box-shadow: none;
-    position: relative;
-    z-index: 1;
-}
-
-.enrollmemt-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
-.lcc-logo img {
-    width: 400px;
-    position: fixed;
-    left: 100px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-nav {
-    position: absolute;
-    right: 150px;
-    top: 50px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 30px;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-nav ul li a:hover {
-    color: #FFEB3B;
-    text-decoration: underline;
-}
-
-.enrollment-body {
-    text-align: left;
-    margin-top: 100px;
-    position: absolute;
-    right: 150px;
-    width: 40%;
-    z-index: 1;
-    color: black;
-}
-
-.enrollment-body h2 {
-    font-size: 32px;
-    font-weight: bold;
+.whyEnroll p {
+  font-size: 1.15rem;
+  margin-bottom: 25px;
+  opacity: 0.95;
 }
 
 #enroll-btn {
-    background-color: blue;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    border-radius: 25px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: bold;
-    text-align: center;
+  background: #4211E4;
+  color: white;
+  border: none;
+  padding: 16px 48px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(107, 31, 198, 0.4);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#enroll-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(138, 59, 232, 0.5);
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 12px 5%;
+  }
+
+  .hamburger {
     display: flex;
-    align-items: center;
-    justify-content: center;
+  }
+
+  .page-title {
+    font-size: 1.35rem;
+  }
+
+  .logo-container img {
+    height: 55px;
+  }
+
+  .navbar ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #4211E4;
+    flex-direction: column;
+    padding: 15px 0;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 99;
+  }
+
+  .navbar ul.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navbar li {
+    padding: 15px 5%;
+    font-size: 1.1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .navbar li:last-child {
+    border-bottom: none;
+  }
 }
-
-#enroll-btn:hover{
-    background: #2a2c7a
-}
-
-
 
 /*Responsive Media Query Mobile*/
 @media (max-width: 520px) {
@@ -394,4 +478,34 @@ nav ul li a:hover {
     padding: 10px 15px 15px;
   }
 
+  /*Enrollment Page Mobile*/
+  .backgroundContainer {
+    background-image:
+    linear-gradient(rgba(75, 73, 73, 0.45), rgba(0, 0, 0, 0.55)),
+    url('./components/assets/lcc_portrait.jpg');
+  }
+  
+  .body-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .body-container img {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+/* Buger menu Animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
