@@ -1,6 +1,6 @@
-<h1 algin="center">🤖 LISA</h1>
+<h1 algin="center">🤖 ISA</h1>
 
-Please meet LISA, LCC's Intelligent Student Assistant, that will help you with your concerns and has full cover of the college department's handbook!
+Please meet ISA, Intelligent Student Assistant, that will help you with your concerns and has full cover of the college department's handbook!
 
 ## 🌐 Live Demo
 🚀 Try the chatbot here: https://lcc-chatbot-demo.netlify.app/
