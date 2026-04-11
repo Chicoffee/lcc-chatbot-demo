@@ -17,8 +17,8 @@ const EnrollmentPage = () => {
         {/* Header */}
         <div className="header-container">
           <div className="logo-container">
-            <img src={lccLogo} alt="lcc logo" />
-            <h1 className="page-title">LA CONCEPCION COLLEGE</h1>
+          {/*<img src={lccLogo} alt="lcc logo" />*/}
+            <h1 className="page-title"> </h1>
           </div>
 
           <nav className="navbar">
@@ -45,7 +45,7 @@ const EnrollmentPage = () => {
 
         {/* BODY */}
         <div className="body-container">
-          <img src={PrLogo} alt="Enrollment Poster" />
+          {/*<img src={PrLogo} alt="Enrollment Poster" />*/}
           <div className="whyEnroll">
             <h3>Why Enroll with us?</h3>
             <ul>
